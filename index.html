@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data Science Portfolio</title>
+  <title>Data Science Portfolio | [Your Name]</title>
   
   <link rel="stylesheet" href="style.css">
 </head>
@@ -12,11 +12,11 @@
   <header class="site-header">
     <div class="container">
       <nav class="nav">
-        <a href="#home" class="nav-logo">Data<span class="blink">_</span>Sci</a>
+        <a href="#home" class="nav-logo">[Lastname]<span class="blink">.</span></a>
         
         <div class="nav-links">
           <a href="#home">Home</a>
-          <a href="#projects">Projects</a>
+          <a href="#project">Project</a>
           <a href="#resume">Resume</a>
           <a href="#contact">Contact</a>
         </div>
@@ -28,34 +28,31 @@
 
   <main>
     <section id="home" class="section bg-grid hero">
-      <div class="container">
+      <div class="container container--prose text-center stack stack--lg">
         
-        <div class="grid grid--2 items-center">
-          
-          <div class="stack">
-            <span class="eyebrow">about_me</span>
-            
-            <h1>Hi, I'm [Your Name].</h1>
-            
-            <p class="hero-sub">
-              [Placeholder for your short text. I am a Data Scientist specializing in machine learning, data engineering, and translating complex datasets into actionable insights. Welcome to my digital notebook.]
-            </p>
-            
-            <div class="hero-actions">
-              <a href="#projects" class="btn btn-primary">Projects</a>
-              <a href="#resume" class="btn btn-outline">Resume</a>
-            </div>
-          </div>
-
-          <div class="text-center">
-            <img 
-              src="https://via.placeholder.com/500x500/EFEDE7/8A8F98?text=Your+Picture+Here" 
-              alt="Profile picture of [Your Name]" 
-              style="border-radius: var(--radius-md); border: var(--border-width) solid var(--color-border); width: 100%; max-width: 400px; margin: 0 auto; box-shadow: var(--shadow-sm);"
-            />
-          </div>
-
+        <div>
+          <img 
+            src="https://via.placeholder.com/200x200/EFEDE7/8A8F98?text=Portrait" 
+            alt="Professional portrait of [Your Name]" 
+            style="border-radius: 50%; border: var(--border-width) solid var(--color-border); width: 160px; height: 160px; object-fit: cover; margin: 0 auto; box-shadow: var(--shadow-sm);"
+          />
         </div>
+
+        <div class="stack stack--sm">
+          <span class="eyebrow">professional_overview</span>
+          
+          <h1>[Your Full Name]</h1>
+          
+          <p class="hero-sub text-center" style="margin-inline: auto;">
+            [Placeholder for your formal summary. I am a Data Scientist with demonstrated expertise in statistical modeling, quantitative analysis, and machine learning. I specialize in translating complex data architectures into rigorous, actionable insights.]
+          </p>
+        </div>
+        
+        <div class="hero-actions" style="justify-content: center;">
+          <a href="#project" class="btn btn-primary">Project</a>
+          <a href="#resume" class="btn btn-outline">Resume</a>
+        </div>
+
       </div>
     </section>
   </main>
