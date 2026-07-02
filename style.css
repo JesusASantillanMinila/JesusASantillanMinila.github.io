@@ -532,14 +532,14 @@ textarea:focus-visible,
   color: var(--color-accent-strong);
 }
 
-.btn::after {
+/* .btn::after {
   content: "→";
   transition: transform var(--duration-fast) var(--ease-out);
 }
 
 .btn:hover::after {
   transform: translateX(3px);
-}
+} */
 
 /* --------------------------------------------------------------------------
    9. STAT BLOCKS (terminal-output style)

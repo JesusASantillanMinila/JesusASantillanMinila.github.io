@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Jesus Santillan Minila</title>
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="nav-logo">JSM<span class="blink">.</span></a>
+        
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="index.html#resume">Resume</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        
+        <button class="nav-toggle" aria-label="Toggle menu">Menu</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="projects" class="section bg-grid" style="min-height: calc(100vh - 80px);">
+      <div class="container">
+        
+        <div class="stack stack--sm" style="margin-bottom: var(--space-8);">
+          <span class="eyebrow">Portfolio</span>
+          <h2>Applied Data Science</h2>
+          <p class="hero-sub text-muted">
+            A selection of interactive applications and predictive models exploring machine learning, LLM integration, and statistical simulation.
+          </p>
+        </div>
+
+        <div class="grid grid--2">
+          
+          <article class="card">
+            <div class="card-eyebrow">LLM / RAG</div>
+            <h3>Minil.Ai Chatbot</h3>
+            <p>
+              An interactive digital resume powered by Retrieval-Augmented Generation. Chat directly with an AI assistant to query my professional background, technical skills, and career history.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Python</span>
+              <span class="tag">Gemini LLM</span>
+              <span class="tag">Streamlit</span>
+            </div>
+            <div class="card-footer">
+              <div class="flex gap-4">
+                <a href="https://chatbot-opepfv33as.streamlit.app/" target="_blank" rel="noopener noreferrer" class="card-link link-underline">Live App</a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="card-link link-underline">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-eyebrow">Time Series / Forecasting</div>
+            <h3>Stock Forecast Engine</h3>
+            <p>
+              A predictive financial tool allowing users to forecast stock prices using real-time market data. Compare predictions across four distinct algorithms: Prophet, XGBoost, Moving Average, and LSTM.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Python</span>
+              <span class="tag">yfinance</span>
+              <span class="tag">XGBoost</span>
+              <span class="tag">LSTM</span>
+            </div>
+            <div class="card-footer">
+              <div class="flex gap-4">
+                <a href="https://stock-forecast-app-n7818z9cwi.streamlit.app/" target="_blank" rel="noopener noreferrer" class="card-link link-underline">Live App</a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="card-link link-underline">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-eyebrow">Clustering / Demographics</div>
+            <h3>US Population Segmenter</h3>
+            <p>
+              A geospatial analysis tool that segments state populations by age, income, and education using K-Means clustering. Includes AI-generated personas to interpret and summarize the distinct demographic clusters.
+            </p>
+            <div class="tag-list">
+              <span class="tag">scikit-learn</span>
+              <span class="tag">Gemini LLM</span>
+              <span class="tag">Census API</span>
+              <span class="tag">Plotly</span>
+            </div>
+            <div class="card-footer">
+              <div class="flex gap-4">
+                <a href="https://population-clusters-personas-1jnth7ueccb.streamlit.app/" target="_blank" rel="noopener noreferrer" class="card-link link-underline">Live App</a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="card-link link-underline">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-eyebrow">Simulation / Analytics</div>
+            <h3>Super Bowl LX Simulator</h3>
+            <p>
+              A Monte Carlo simulation engine designed to forecast the outcome of the upcoming Super Bowl. Users can adjust key game parameters and leverage historical NFL play-by-play statistics to run probability models.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Python</span>
+              <span class="tag">Monte Carlo</span>
+              <span class="tag">nflreadpy</span>
+              <span class="tag">Altair</span>
+            </div>
+            <div class="card-footer">
+              <div class="flex gap-4">
+                <a href="https://superbowl-lx-simulator-jzrcb8vhxh4gapijokakkr.streamlit.app/" target="_blank" rel="noopener noreferrer" class="card-link link-underline">Live App</a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="card-link link-underline">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-eyebrow">Data Extraction / Automation</div>
+            <h3>Job Search & Visa Filter</h3>
+            <p>
+              An automated scraping pipeline that aggregates postings from LinkedIn, Indeed, and ZipRecruiter. It dynamically parses descriptions to isolate opportunities offering visa sponsorship or work authorization.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Python</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">JobSpy</span>
+              <span class="tag">Streamlit</span>
+            </div>
+            <div class="card-footer">
+              <div class="flex gap-4">
+                <a href="#" target="_blank" rel="noopener noreferrer" class="card-link link-underline">Live App</a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="card-link link-underline">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-eyebrow">Geospatial AI / Mapping</div>
+            <h3>AI Route Planner & Guide</h3>
+            <p>
+              A smart itinerary generator leveraging the Gemini LLM to suggest personalized travel destinations based on user interests. Integrates the Geoapify API and Folium to plot optimized, interactive walking routes.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Gemini LLM</span>
+              <span class="tag">Folium</span>
+              <span class="tag">Geoapify API</span>
+              <span class="tag">Streamlit</span>
+            </div>
+            <div class="card-footer">
+              <div class="flex gap-4">
+                <a href="#" target="_blank" rel="noopener noreferrer" class="card-link link-underline">Live App</a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="card-link link-underline">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
