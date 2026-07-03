@@ -163,5 +163,21 @@
     </section>
   </main>
 
+<script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('is-open');
+      
+      // Optional: Update the text so it says "Close" when open
+      if (navLinks.classList.contains('is-open')) {
+        navToggle.textContent = 'Close';
+      } else {
+        navToggle.textContent = 'Menu';
+      }
+    });
+  </script>
+  
 </body>
 </html>

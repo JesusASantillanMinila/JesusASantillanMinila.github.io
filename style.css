@@ -447,7 +447,22 @@ textarea:focus-visible,
 @media (max-width: 700px) {
   .nav-links {
     display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Positions it right below the header */
+    left: 0;
+    width: 100%;
+    background-color: rgba(247, 246, 243, 0.95); /* Matches your header styling */
+    padding: var(--space-4) var(--space-5);
+    border-bottom: var(--border-width) solid var(--color-border);
+    box-shadow: var(--shadow-sm);
   }
+  
+  /* This is the class our JavaScript will add/remove */
+  .nav-links.is-open {
+    display: flex;
+  }
+  
   .nav-toggle {
     display: inline-flex;
   }
