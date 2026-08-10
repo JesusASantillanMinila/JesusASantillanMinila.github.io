@@ -43,7 +43,7 @@
 
         <div class="grid grid--2">
           
-          <article class="card" data-search="llm large language model retrieval augmented generation rag minil.ai chatbot gemini resume python">
+          <article class="card" data-search="llm large language model retrieval augmented generation rag minil.ai chatbot gemini resume python ai artificial intelligence">
             <div class="card-eyebrow">LLM / RAG</div>
             <h3>Minil.Ai Chatbot</h3>
             <p>
@@ -62,7 +62,7 @@
             </div>
           </article>
 
-<article class="card" data-search="llm large language model python gemini marketing trend whitespace analyzer social media clustering umap hdbscan plotly python">
+<article class="card" data-search="llm large language model python gemini marketing trend whitespace analyzer social media clustering umap hdbscan plotly python ai artificial intelligence">
             <div class="card-eyebrow">AI / Market Intelligence</div>
             <h3>Trend Whitespace Analyzer</h3>
             <p>
@@ -122,7 +122,7 @@
             </div>
           </article>          
 
-          <article class="card" data-search="clustering demographics population segmenter kmeans large language model ai personas python">
+          <article class="card" data-search="clustering demographics population segmenter kmeans large language model ai personas python artificial intelligence">
             <div class="card-eyebrow">Clustering / Demographics</div>
             <h3>US Population Segmenter</h3>
             <p>
@@ -202,7 +202,7 @@
             </div>
           </article>
 
-          <article class="card" data-search="geospatial ai mapping itinerary route planner folium geoapify artificial intelligence travel guide python">
+          <article class="card" data-search="geospatial ai mapping itinerary route planner geoapify artificial intelligence travel guide python">
             <div class="card-eyebrow">Geospatial AI / Mapping</div>
             <h3>AI Route Planner & Guide</h3>
             <p>
@@ -249,24 +249,32 @@
   const projectCards = document.querySelectorAll('.card');
 
   searchInput.addEventListener('input', (e) => {
-    // Get the search value and convert it to lowercase for case-insensitive matching
-    const searchValue = e.target.value.toLowerCase().trim();
+    // Get the search value and convert it to lowercase
+    const query = e.target.value.toLowerCase().trim();
+    
+    // Split the user's search query into individual words
+    const searchTerms = query.split(/\s+/).filter(term => term.length > 0);
 
-    // Loop over each card to check its hidden data-search attribute
+    // Loop over each card
     projectCards.forEach(card => {
-      // Retrieve the hidden tags from the dataset
-      const hiddenTags = card.dataset.search || "";
+      // Retrieve the hidden tags and split them into an array of individual words
+      const hiddenTags = (card.dataset.search || "").toLowerCase();
+      const tagsArray = hiddenTags.split(/\s+/);
       
-      // If the hidden tags include the search value, remove the hidden class.
-      // Otherwise, add the hidden class to remove it from the view.
-      if (hiddenTags.includes(searchValue)) {
+      // Check if EVERY word the user typed matches the BEGINNING of at least one tag in the card
+      const isMatch = searchTerms.every(term => {
+        return tagsArray.some(tag => tag.startsWith(term));
+      });
+
+      // If there's a match (or the search bar is empty), show the card. Otherwise, hide it.
+      if (isMatch || searchTerms.length === 0) {
         card.classList.remove('is-hidden');
       } else {
         card.classList.add('is-hidden');
       }
     });
   });
-</script>  
+</script>
   
 </body>
 </html>
