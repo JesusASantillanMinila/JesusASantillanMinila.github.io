@@ -30,16 +30,20 @@
     <section id="projects" class="section bg-grid" style="min-height: calc(100vh - 80px);">
       <div class="container">
         
-        <div class="stack stack--sm" style="margin-bottom: var(--space-8);">
+        <div class="stack stack--sm" style="margin-bottom: var(--space-4);">
           <h2>Projects</h2>
           <p class="hero-sub text-muted">
             Explore my selection of interactive data applications powered by Python, modern LLMs, and advanced machine learning frameworks. 
           </p>
         </div>
 
+        <div class="search-container">
+          <input type="text" id="projectSearch" class="search-input" placeholder="Search projects by title, category, or tech stack...">
+        </div>
+
         <div class="grid grid--2">
           
-          <article class="card">
+          <article class="card" data-search="llm large language model retrieval augmented generation rag minil.ai chatbot gemini resume python">
             <div class="card-eyebrow">LLM / RAG</div>
             <h3>Minil.Ai Chatbot</h3>
             <p>
@@ -58,7 +62,7 @@
             </div>
           </article>
 
-<article class="card">
+<article class="card" data-search="llm large language model python gemini marketing trend whitespace analyzer social media clustering umap hdbscan plotly python">
             <div class="card-eyebrow">AI / Market Intelligence</div>
             <h3>Trend Whitespace Analyzer</h3>
             <p>
@@ -78,7 +82,7 @@
             </div>
           </article>          
 
-          <article class="card">
+          <article class="card" data-search="time series forecasting finance stock forecast engine python prophet xgboost lstm long short term memory">
             <div class="card-eyebrow">Time Series / Forecasting</div>
             <h3>Stock Forecast Engine</h3>
             <p>
@@ -98,7 +102,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-search="multi agent ai artificial intelligence finance stock analysis yfinance duckduckgo news sentiment valuation python">
             <div class="card-eyebrow">Multi-Agent AI / Finance</div>
             <h3>Multi-Agent Stock Analysis</h3>
             <p>
@@ -118,7 +122,7 @@
             </div>
           </article>          
 
-          <article class="card">
+          <article class="card" data-search="clustering demographics population segmenter kmeans large language model ai personas python">
             <div class="card-eyebrow">Clustering / Demographics</div>
             <h3>US Population Segmenter</h3>
             <p>
@@ -138,7 +142,7 @@
             </div>
           </article>          
 
-          <article class="card">
+          <article class="card" data-search="blockchain web3 cryptocurrency erc20 ethereum sepolia testnet python smart contracts web3.py">
             <div class="card-eyebrow">Blockchain / Web3 Automation</div>
             <h3>TaakIn Cryptocurrency</h3>
             <p>
@@ -158,7 +162,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-search="simulation super bowl monte carlo nfl python">
             <div class="card-eyebrow">Simulation / Analytics</div>
             <h3>Super Bowl LX Simulator</h3>
             <p>
@@ -178,7 +182,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-search="extraction automation python parser">
             <div class="card-eyebrow">Data Extraction / Automation</div>
             <h3>Job Search & Visa Filter</h3>
             <p>
@@ -198,7 +202,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-search="geospatial ai mapping itinerary route planner folium geoapify artificial intelligence travel guide python">
             <div class="card-eyebrow">Geospatial AI / Mapping</div>
             <h3>AI Route Planner & Guide</h3>
             <p>
@@ -237,7 +241,32 @@
         navToggle.textContent = 'Menu';
       }
     });
-  </script>
+</script>
+
+<script>
+  // Select the search input and all project cards
+  const searchInput = document.getElementById('projectSearch');
+  const projectCards = document.querySelectorAll('.card');
+
+  searchInput.addEventListener('input', (e) => {
+    // Get the search value and convert it to lowercase for case-insensitive matching
+    const searchValue = e.target.value.toLowerCase().trim();
+
+    // Loop over each card to check its hidden data-search attribute
+    projectCards.forEach(card => {
+      // Retrieve the hidden tags from the dataset
+      const hiddenTags = card.dataset.search || "";
+      
+      // If the hidden tags include the search value, remove the hidden class.
+      // Otherwise, add the hidden class to remove it from the view.
+      if (hiddenTags.includes(searchValue)) {
+        card.classList.remove('is-hidden');
+      } else {
+        card.classList.add('is-hidden');
+      }
+    });
+  });
+</script>  
   
 </body>
 </html>

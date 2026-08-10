@@ -889,3 +889,35 @@ textarea:focus-visible,
     align-items: flex-start;
   }
 }
+
+/* --------------------------------------------------------------------------
+   17. SEARCH BAR STYLES
+   -------------------------------------------------------------------------- */
+.search-container {
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--color-white);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  color: var(--color-text);
+  transition: border-color var(--duration-fast) var(--ease-out),
+              box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.search-input:focus {
+  border-color: var(--color-accent-strong);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(91, 140, 123, 0.2); /* Soft sage glow */
+}
+
+/* Utility class applied by JavaScript to hide non-matching cards */
+.is-hidden {
+  display: none !important;
+}
