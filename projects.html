@@ -121,7 +121,7 @@
               </div>
             </div>
           </article>        
-          
+                    
           <article class="card" data-search="data engineering geospatial automation python geopandas overpass api github etl parquet time series">
             <div class="card-eyebrow">Data Engineering / Automation</div>
             <h3>US Data Center Tracker</h3>
@@ -134,13 +134,20 @@
               <span class="tag">Overpass API</span>
               <span class="tag">GitHub</span>
             </div>
+            
             <div class="card-footer">
-              <div class="flex gap-4">
+              <!-- Links on the left -->
+              <div class="flex gap-4 items-center">
                 <a href="https://data-centers-time-series-u3z562udkvwwbsaasoidhp.streamlit.app/" target="_blank" rel="noopener noreferrer" class="card-link link-underline">Live App</a>
                 <a href="https://github.com/JesusASantillanMinila/data_centers_time_series" target="_blank" rel="noopener noreferrer" class="card-link link-underline">GitHub</a>
               </div>
+
+              <div class="download-badge">
+                <strong id="parquet-download-count">Loading...</strong>
+                <span>Downloads</span>
+              </div>
             </div>
-          </article>          
+          </article>     
 
           <article class="card" data-search="clustering demographics population segmenter kmeans large language model ai personas python artificial intelligence">
             <div class="card-eyebrow">Clustering / Demographics</div>
@@ -296,5 +303,43 @@
   });
 </script>
   
+<script>
+  async function fetchDataCenterDownloads() {
+      // Pre-filled with your repository details
+      const githubUser = 'JesusASantillanMinila'; 
+      const githubRepo = 'data_centers_time_series'; 
+      
+      // CHANGE THIS to your exact parquet filename
+      const targetFile = 'data_centers.parquet'; 
+
+      const url = `https://api.github.com/repos/${githubUser}/${githubRepo}/releases/latest`;
+      const displayElement = document.getElementById('parquet-download-count');
+
+      try {
+          const response = await fetch(url);
+          
+          if (!response.ok) {
+              throw new Error(`API status: ${response.status}`);
+          }
+          
+          const releaseData = await response.json();
+          const asset = releaseData.assets.find(a => a.name === targetFile);
+          
+          if (asset) {
+              displayElement.innerText = asset.download_count.toLocaleString();
+          } else {
+              displayElement.innerText = "N/A";
+          }
+          
+      } catch (error) {
+          console.error("Failed to fetch download count:", error);
+          displayElement.innerText = "N/A";
+      }
+  }
+
+  // Fetch the count when the page loads
+  document.addEventListener('DOMContentLoaded', fetchDataCenterDownloads);
+</script>
+
 </body>
 </html>
